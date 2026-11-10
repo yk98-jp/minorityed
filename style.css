@@ -38,6 +38,8 @@ h3 {
 p { text-indent: 1em; margin: 0 0 1em; }
 .b { font-weight: bold; }
 .bindt-1 { margin-left: 1em; }
+.bindt-1 + p { margin-top: 1em; }
+.log { padding: 0; margin-bottom: 28px; color: var(--ink); line-height: 1.9; }
 
 @media (max-width: 560px) {
   body { padding: 0 16px 48px; font-size: 15px; }
