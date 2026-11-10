@@ -1,23 +1,46 @@
-/* arsvi.com の旧 default.css へのオマージュ。書き起こし（2026-11-10） */
-body { margin: 0 auto; max-width: 875px; padding: 0 16px; font-size: 103%; line-height: 180%;
-  font-family: "Meiryo", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic Pro", sans-serif;
-  color: #000; background: #fff; overflow-wrap: break-word; }
-a { color: #0000ff; }
-a:visited { color: #800080; }
-h1 { font-size: 160%; line-height: 130%; font-weight: bold; color: #666; margin: 1.2em 0 .4em; }
-h2 { font-size: 140%; line-height: 140%; margin: 2em 0 1rem; padding: .3em 0 .3em 1rem;
-  letter-spacing: .1em; background: #02406d; color: #fff; }
-h2::first-letter { font-size: 130%; text-shadow: 3px 3px 1px #666; padding-right: 5px; }
-h3 { font-size: 120%; margin: 1.6em 0 .8rem; letter-spacing: .05em; border-bottom: 1px solid #ccc; color: #02406d; }
-h3::before { content: ""; border-left: 5px solid #02406d; padding-right: calc(1rem - 3px); }
-hr { border: 0; border-top: 1px solid #999; margin: 1.5em 0; }
-.m { color: #dc143c; }
-.s { font-size: 90%; }
-.small { font-size: 85%; color: #333; }
-ul { padding-left: 1.5em; }
-li { margin: .15em 0; }
-dl.ev { margin: 0 0 0 1em; }
-dl.ev dt { font-weight: bold; margin-top: .4em; }
-dl.ev dd { margin: 0 0 0 1.5em; }
-address { font-style: normal; font-size: 90%; }
-.footer { margin: 3em 0 2em; font-size: 85%; color: #555; }
+/* arsvi.com の default-2020.css へのオマージュ。
+   残したもの：中央の灰色の題と読み、■の見出しに薄い地と上の線、◇の見出しの左の青線、青いリンク、last update。
+   変えたもの：行間と余白、文字の大きさ、幅、線の質感（ridge をやめて細い実線）、スマホでの読みやすさ。 */
+:root {
+  --ink: #222;
+  --muted: #666;
+  --rule: #e4e4e4;
+  --tint: #f6f6f4;
+  --navy: #112b4c;
+  --accent: #285294;
+  --link: #1a4fd6;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0 auto; max-width: 760px; padding: 0 20px 64px;
+  font-family: "Meiryo", "Yu Gothic", YuGothic, "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 16px; line-height: 1.85; color: var(--ink); background: #fff;
+  overflow-wrap: anywhere; font-feature-settings: "palt" 0;
+}
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .22em; }
+a:hover { text-decoration-thickness: 2px; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 0; }
+
+.s { font-size: 13px; color: var(--muted); padding: 20px 0 14px; }
+.c { text-align: center; padding: 36px 0 30px; color: var(--muted); font-size: 13px; letter-spacing: .12em; }
+h1 { margin: 0 0 6px; font-size: 28px; line-height: 1.35; font-weight: bold; color: #555; letter-spacing: .06em; }
+.sr { font-size: 12px; color: var(--muted); text-align: right; margin: 10px 0 0; }
+
+h2 {
+  margin: 48px 0 18px; padding: 8px 14px; font-size: 17px; font-weight: bold; letter-spacing: .04em;
+  color: var(--navy); background: var(--tint); border-top: 1px solid #cfcfcf;
+}
+h3 {
+  margin: 30px 0 10px; padding: 0 0 4px 10px; font-size: 16px; font-weight: bold;
+  border-left: 3px solid var(--accent); border-bottom: 1px solid var(--rule);
+}
+p { text-indent: 1em; margin: 0 0 1em; }
+.b { font-weight: bold; }
+.bindt-1 { margin-left: 1em; }
+
+@media (max-width: 560px) {
+  body { padding: 0 16px 48px; font-size: 15px; }
+  h1 { font-size: 23px; }
+  .bindt-1 { margin-left: 0; }
+}
